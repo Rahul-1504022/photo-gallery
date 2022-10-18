@@ -1,0 +1,36 @@
+.gallery>img {
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    cursor: pointer;
+
+
+}
+
+.gallery>img:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    border: 2px solid grey;
+}
+
+.gallery {
+    margin: 0px 100px;
+}
+
+.wallpaper {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.wallpaper>div {
+    flex: 1 1;
+}
+
+
+
+.modalImg {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen {}
