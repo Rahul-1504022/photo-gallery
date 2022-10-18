@@ -7,3 +7,14 @@ export const loadPhotos = () => {
         payload: Photo,
     }
 }
+
+export const addComment = (photoId, comment, userName) => {
+    return {
+        type: actionTypes.ADD_COMMENT,
+        payload: {
+            photoId: photoId,
+            comment: comment,
+            author: userName,
+        },
+    }
+}

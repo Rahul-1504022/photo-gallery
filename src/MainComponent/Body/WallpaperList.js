@@ -10,6 +10,7 @@ import PhotoDetails from "./PhotoDetails";
 const mapStateToProps = state => {
     return {
         Photo: state.Photo,
+        Comments: state.Comments,
     }
 }
 
@@ -61,8 +62,12 @@ class WallpaperList extends Component {
 
         //Select Photo for Modal
         if (this.state.photo) {
+            const comments = this.props.Comments.filter(comment => {
+                return comment.photoId === this.state.photo.id;
+            })
             photoDetails = (<PhotoDetails
                 photo={this.state.photo}
+                comments={comments}
             />)
         }
 

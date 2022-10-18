@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./CommentForm.css";
+import { connect } from "react-redux";
+import { addComment } from "../../redux/actionCreators";
+
+const mapStateToProps = state => {
+    return {
+        Comments: state.Comments
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addComment: (photoId, comment, userName) => dispatch(addComment(photoId, comment, userName)),
+    }
+}
 
 class CommentForm extends Component {
+    constructor(props) {
+        super(props);
+    }
     state = {
         photoComment: {
-            photoName: "",
+            photoId: this.props.photoId,
             comment: "",
             userName: "",
         },
-        submit: false,
     }
 
     inputChangeHandler = event => {
@@ -21,51 +37,57 @@ class CommentForm extends Component {
                 ...this.state.photoComment,
                 [name]: value,
             }
-
         })
 
     }
 
     submitHandler = event => {
         event.preventDefault();
+        this.props.addComment(this.state.photoComment.photoId, this.state.photoComment.comment, this.state.photoComment.userName);
         this.setState({
-            submit: true,
+            photoComment: {
+                photoId: this.props.photoId,
+                comment: "",
+                userName: "",
+            }
         })
 
     }
 
     render() {
-        let loadComment = null;
-        if (this.state.submit) {
-            loadComment = (
-                <div className="comment">
-                    User Name:<h6>{this.state.photoComment.userName}</h6>
-                    <p>{this.state.photoComment.comment}</p>
-                </div>
-            )
-        }
 
         return (
             <div>
-                {this.state.comment === "" ? <p>No Comment yet</p> : loadComment}
                 <hr />
                 <form onSubmit={this.submitHandler} className="commentForm">
-                    <label for="userName">User Name:</label>
+                    <label htmlFor="photoId">Photo-Id: <span style={{ color: "red" }}>(Can not changed)</span></label>
+                    <br />
+                    <input type="text"
+                        value={this.state.photoComment.photoId}
+                        placeholder={this.state.photoComment.photoId}
+                        name="photoId"
+                        readOnly
+                    />
+                    <br />
+
+                    <label htmlFor="userName">User Name:<span style={{ color: "red" }}>***</span></label>
                     <br />
                     <input type="text"
                         value={this.state.photoComment.userName}
                         name="userName"
                         placeholder="User Name"
-                        onChange={this.inputChangeHandler} />
+                        onChange={this.inputChangeHandler}
+                        required />
                     <br />
 
-                    <label for="comment">Comment:</label>
+                    <label htmlFor="comment">Comment:<span style={{ color: "red" }}>***</span></label>
                     <br />
                     <input type="text"
                         value={this.state.photoComment.comment}
                         name="comment"
                         placeholder="your comment"
-                        onChange={this.inputChangeHandler} />
+                        onChange={this.inputChangeHandler}
+                        required />
                     <br />
 
                     <Button>Submit</Button>
@@ -75,4 +97,4 @@ class CommentForm extends Component {
         )
     }
 }
-export default CommentForm;
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

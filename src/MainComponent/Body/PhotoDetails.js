@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardImg, CardTitle, CardText } from "reactstrap";
+import LoadComments from "./LoadComments";
+import CommentForm from "./CommentForm";
 
 const PhotoDetails = props => {
     return (
@@ -10,9 +12,9 @@ const PhotoDetails = props => {
                     <CardTitle style={{ fontWeight: "bold", fontFamily: "cursive", color: "green" }}>{props.photo.name}</CardTitle>
                     <hr />
                     <h5 style={{ fontStyle: "italic" }}><u>Comments</u></h5>
-                    {/* <LoadComments comments={props.comments} /> */}
+                    <LoadComments comments={props.comments} />
                     <hr />
-                    {/* <CommentForm dishId={props.detail.id} addComment={props.addComment} /> */}
+                    <CommentForm photoId={props.photo.id} />
 
                 </CardBody>
             </Card>
