@@ -2,8 +2,31 @@ import React from "react";
 import Logo from '../../assets/logo.jpeg';
 import './NavBar.css';
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-const NavBar = props => {
+const mapStateToProps = state => {
+    return {
+        token: state.token,
+    }
+}
+
+
+const NavBar = (props) => {
+    let isAuthLink = null;
+    if (props.token) {
+        isAuthLink = (
+            <li>
+                <NavLink to="/logout">Logout</NavLink>
+            </li>
+
+        )
+    } else {
+        isAuthLink = (
+            <li>
+                <NavLink to="/auth">Login</NavLink>
+            </li>
+        )
+    }
     return (
         <div className="navlist">
             <a href="#"><img src={Logo} width="100px" height="auto" alt="Logo" /></a>
@@ -21,13 +44,11 @@ const NavBar = props => {
                     <NavLink to="/">Contact</NavLink>
                     {/* <a href="#">Contact</a> */}
                 </li>
-                <li>
-                    <NavLink to="/">Logout</NavLink>
-                    {/* <a href="#">Logout</a> */}
-                </li>
+                {isAuthLink}
             </ul>
         </div>
     )
 }
 
-export default NavBar;
+
+export default connect(mapStateToProps)(NavBar);

@@ -2,17 +2,19 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./CommentForm.css";
 import { connect } from "react-redux";
-import { addComment } from "../../redux/actionCreators";
+import { addComment, addNewComment } from "../../redux/actionCreators";
 
 const mapStateToProps = state => {
     return {
-        Comments: state.Comments
+        Comments: state.Comments,
+        userId: state.userId,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         addComment: (photoId, comment, userName) => dispatch(addComment(photoId, comment, userName)),
+        addNewComment: (photoId, comment, userName, userId) => dispatch(addNewComment(photoId, comment, userName, userId)),
     }
 }
 
@@ -43,7 +45,8 @@ class CommentForm extends Component {
 
     submitHandler = event => {
         event.preventDefault();
-        this.props.addComment(this.state.photoComment.photoId, this.state.photoComment.comment, this.state.photoComment.userName);
+        // this.props.addComment(this.state.photoComment.photoId, this.state.photoComment.comment, this.state.photoComment.userName);
+        this.props.addNewComment(this.state.photoComment.photoId, this.state.photoComment.comment, this.state.photoComment.userName, this.props.userId);
         this.setState({
             photoComment: {
                 photoId: this.props.photoId,

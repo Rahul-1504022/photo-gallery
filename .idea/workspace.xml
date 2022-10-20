@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="694f67b3-229d-44f1-b597-534fd3ea17fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainComponent/Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainComponent/Body/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainComponent/Body/CommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainComponent/Body/CommentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainComponent/Body/PhotoDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainComponent/Body/PhotoDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainComponent/Body/WallpaperList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainComponent/Body/WallpaperList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainComponent/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainComponent/Header/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actionCreators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2GP35jrloMriKnZvOEmftEL18ST" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="694f67b3-229d-44f1-b597-534fd3ea17fa" name="Default Changelist" comment="" />
+      <created>1666276210623</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666276210623</updated>
+    </task>
+    <servers />
+  </component>
+</project>

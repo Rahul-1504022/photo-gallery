@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./WallpaperList.css";
 import { connect } from "react-redux";
-import { loadPhotos } from "../../redux/actionCreators";
+import { loadAllComments, loadPhotos } from "../../redux/actionCreators";
 import CommentForm from "./CommentForm";
 import { Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 import Photo from "./Photo";
@@ -11,12 +11,14 @@ const mapStateToProps = state => {
     return {
         Photo: state.Photo,
         Comments: state.Comments,
+        LoggedIn: state.LoggedIn,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         loadAllPhotos: () => dispatch(loadPhotos()),
+        loadAllComments: () => dispatch(loadAllComments()),
     }
 }
 
@@ -28,7 +30,9 @@ class WallpaperList extends Component {
 
     //fetch all photo after Mount
     componentDidMount() {
+
         this.props.loadAllPhotos();
+        this.props.loadAllComments();
     }
     //Select specific Photo
     selectedPhoto = photoItem => {
@@ -68,6 +72,7 @@ class WallpaperList extends Component {
             photoDetails = (<PhotoDetails
                 photo={this.state.photo}
                 comments={comments}
+                loggedin={this.props.LoggedIn}
             />)
         }
 
