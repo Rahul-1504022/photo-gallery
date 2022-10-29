@@ -35,6 +35,7 @@ class Auth extends Component {
     }
 
     render() {
+        document.title = "Authentication";
         let err = null;
         let form = null;
         {
@@ -81,7 +82,7 @@ class Auth extends Component {
                     }
                 >
                     {({ values, handleChange, handleSubmit, errors }) => <div className="container" style={{ border: "2px solid wheat", padding: "50px 80px", textAlign: "center", borderRadius: "10px" }}>
-                        <button onClick={this.switchModeHandler} style={{ width: "100%", backgroundColor: "#d70f64", color: "white" }} className="btn btn-large">Switch to {this.state.mode === "Sign Up" ? "Login" : "Sign Up"}</button>
+                        <button onClick={this.switchModeHandler} style={{ width: "100%", backgroundColor: "#800000", color: "white" }} className="btn btn-large">Switch to {this.state.mode === "Sign Up" ? "Login" : "Sign Up"}</button>
                         <br />
                         <br />
                         <form onSubmit={handleSubmit}>
@@ -126,7 +127,7 @@ class Auth extends Component {
             )
         }
         return (
-            <div>
+            <div style={{ margin: "40px 0px" }}>
                 {err}
                 {form}
             </div >

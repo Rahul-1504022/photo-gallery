@@ -4,6 +4,6 @@ import thunk from 'redux-thunk';
 import { Reducer } from './reducer';
 
 //Store Create
-const myStore = legacy_createStore(Reducer, applyMiddleware(logger, thunk));
+const myStore = legacy_createStore(Reducer, applyMiddleware(thunk));
 export default myStore;
 

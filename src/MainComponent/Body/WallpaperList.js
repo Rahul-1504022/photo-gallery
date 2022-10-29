@@ -49,6 +49,7 @@ class WallpaperList extends Component {
     }
 
     render() {
+        document.title = "Home Page";
         let photo = null;
         let photoDetails = null;
         //Photo on Home Page

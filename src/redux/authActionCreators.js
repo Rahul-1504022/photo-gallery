@@ -20,6 +20,18 @@ export const logout = () => dispatch => {
     }
 }
 
+export const authCheck = () => dispatch => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        dispatch(logout());
+    } else {
+        const expirationTime = new Date(localStorage.getItem("expirationTime"));
+        if (expirationTime <= new Date()) {
+            dispatch(logout());
+        }
+    }
+}
+
 export const auth = (email, password, mode) => {
     return dispatch => {
         const authData = {

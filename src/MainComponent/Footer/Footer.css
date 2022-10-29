@@ -1,6 +1,7 @@
 .footer {
     border: 1px solid;
     margin-top: 20px;
+    width: 100%;
     background-color: dimgray;
     color: whitesmoke;
     text-align: center;

@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from '../../assets/logo.jpeg';
+import Logo from '../../logo.jpeg';
 import './NavBar.css';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -29,7 +29,7 @@ const NavBar = (props) => {
     }
     return (
         <div className="navlist">
-            <a href="#"><img src={Logo} width="100px" height="auto" alt="Logo" /></a>
+            <Link to="/"><img src={Logo} width="100px" height="auto" alt="Logo" /></Link>
             <p className="navlist-text">Best Wallpaper</p>
             <ul>
                 <li>
@@ -37,11 +37,11 @@ const NavBar = (props) => {
                     {/* <a href="#">Home</a> */}
                 </li>
                 <li>
-                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="#">About</NavLink>
                     {/* <a href="about">About</a> */}
                 </li>
                 <li>
-                    <NavLink to="/">Contact</NavLink>
+                    <NavLink to="#">Contact</NavLink>
                     {/* <a href="#">Contact</a> */}
                 </li>
                 {isAuthLink}
